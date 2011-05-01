@@ -1,8 +1,8 @@
 Esta codekata la diseñaron Agilismo.es con motivo del codingdojo celebrado durante la XGN 2011, en Santiago de Compostela, de ahí que esté basada en una metáfora relacionada con el pescado, aunque en realidad oculta otro problema bien distinto.
 
-En la lonja de un puerto pesquero gallego, un gallego emprendedor ha decidido comercializar pescado fresco gallego en otras ciudades de Europa, para ello va a comenzar con una pequeña furgoneta que es <em>capaz de transportar hasta 200 Kg de pescado</em>.
+En la lonja de un puerto pesquero gallego, un gallego emprendedor ha decidido comercializar pescado fresco gallego en otras ciudades de Europa, para ello va a comenzar con una pequeña furgoneta que es <strong>capaz de transportar hasta 200 Kg de pescado</strong>.
 
-Para el primer viaje ha comprado <em>50 Kg de vieiras</em>, <em>100 Kg de pulpo</em> y otros <em>50 Kg de centollos</em>, pero se pregunta dónde debería vender esta carga para obtener el máximo beneficio.
+Para el primer viaje ha comprado <strong>50 Kg de vieiras</strong>, <strong>100 Kg de pulpo</strong> y otros <strong>50 Kg de centollos</strong>, pero se pregunta dónde debería vender esta carga para obtener el máximo beneficio.
 
 Para ello conoce los precios de venta en los diferentes mercados locales:
 
@@ -11,7 +11,7 @@ Para ello conoce los precios de venta en los diferentes mercados locales:
  Pulpo       |    0   |    120    |  100
  Centollos   |  450   |      0    |  500
 
-Pero además hay que tener en cuenta que tan sólo <em>cargar la furgoneta le cuesta 5 € más 2 € por cada Km recorrido</em>.
+Pero además hay que tener en cuenta que tan sólo <strong>cargar la furgoneta le cuesta 5 € más 2 € por cada Km recorrido</strong>.
 
 Las distancias hasta los posibles destinos son:
 
@@ -19,8 +19,8 @@ Las distancias hasta los posibles destinos son:
 * a BARCELONA : 1100 Km
 * a LISBOA : 600 Km
 
-Y por último, hay que tener en cuenta que los compradores estiman que el <em>valor de compra de la carga se deprecia en un 1% por cada 100 Km recorridos</em>.
+Y por último, hay que tener en cuenta que los compradores estiman que el <strong>valor de compra de la carga se deprecia en un 1% por cada 100 Km recorridos</strong>.
 
-Recordad, <em>el objetivo es responder a nuestro amigo emprendedor dónde debería vender esa carga de pescado y marisco para obtener el mayor beneficio</em>.
+Recordad, <strong>el objetivo es responder a nuestro amigo emprendedor dónde debería vender esa carga de pescado y marisco para obtener el mayor beneficio</strong>.
 
 Web: http://agilismo.es/codekatas/109-katalonja
