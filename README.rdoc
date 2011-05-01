@@ -7,8 +7,8 @@ Para el primer viaje ha comprado 50 Kg de vieiras, 100 Kg de pulpo y otros 50 Kg
 Para ello conoce los precios de venta en los diferentes mercados locales:
 
  €/Kg        | MADRID | BARCELONA | LISBOA
+ Vieiras:    |  500   |    450    |  600
 
-* Vieiras:
 ** MADRID: 500
 ** BARCELONA: 450
 ** LISBOA: 600
