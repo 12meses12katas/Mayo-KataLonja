@@ -6,11 +6,16 @@ Para el primer viaje ha comprado 50 Kg de vieiras, 100 Kg de pulpo y otros 50 Kg
 
 Para ello conoce los precios de venta en los diferentes mercados locales:
 
-| €/Kg        | MADRID | BARCELONA | LISBOA
+ €/Kg        | MADRID | BARCELONA | LISBOA
 
-| vieiras     |  500   |    450    |  600
-
-| pulpo       |    0   |    120    |  100
+* Vieiras:
+** MADRID: 500
+** BARCELONA: 450
+** LISBOA: 600
+* Pulpo:
+** MADRID: 0
+** BARCELONA: 120
+** LISBOA: 100
 
 | centollos   |  450   |      0    |  500
 
