@@ -1,2 +1,2 @@
 - Crear un array de ciudades con sus Km
-- 
+- El programa probara a vender el pescado en todas las ciudades y dara como resultado donde mas dinero gane.
