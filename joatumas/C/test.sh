@@ -7,7 +7,6 @@ else
 fi
 
 RES=`./katalonja 0 200 0`;
-RES=`./katalonja 50 100 50`;
 if [ $RES = "BARCELONA" ];then
 	echo Segona prova correcta;
 else
