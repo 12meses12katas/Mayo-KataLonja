@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="D:\12meses12katas\Mayo-KataLonja\fperezpt\TestsKataLonja\TestsKataLonja.csproj" total="8" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2011-05-02" time="20:04:28">
+  <environment nunit-version="2.5.9.10348" clr-version="2.0.50727.3615" os-version="Microsoft Windows NT 5.1.2600 Service Pack 3" platform="Win32NT" cwd="D:\12meses12katas\Mayo-KataLonja\fperezpt\TestsKataLonja" machine-name="WS-XP" user="nando" user-domain="WS-XP" />
+  <culture-info current-culture="es-ES" current-uiculture="es-ES" />
+  <test-suite type="Project" name="D:\12meses12katas\Mayo-KataLonja\fperezpt\TestsKataLonja\TestsKataLonja.csproj" executed="True" result="Success" success="True" time="1.219" asserts="0">
+    <results>
+      <test-suite type="Assembly" name="D:\12meses12katas\Mayo-KataLonja\fperezpt\TestsKataLonja\bin\Debug\TestsKataLonja.dll" executed="True" result="Success" success="True" time="1.156" asserts="0">
+        <results>
+          <test-suite type="Namespace" name="KataLonja" executed="True" result="Success" success="True" time="1.125" asserts="0">
+            <results>
+              <test-suite type="Namespace" name="Tests" executed="True" result="Success" success="True" time="1.109" asserts="0">
+                <results>
+                  <test-suite type="TestFixture" name="TestKataLonja" executed="True" result="Success" success="True" time="1.109" asserts="0">
+                    <results>
+                      <test-case name="KataLonja.Tests.TestKataLonja.TestGastosFijosIrACiudad" executed="True" result="Success" success="True" time="0.563" asserts="3" />
+                      <test-case name="KataLonja.Tests.TestKataLonja.TestMejorCiudadParaVender" executed="True" result="Success" success="True" time="0.172" asserts="2" />
+                      <test-case name="KataLonja.Tests.TestKataLonja.TestNetoVentaProductosEnCiudad" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                      <test-case name="KataLonja.Tests.TestKataLonja.TestNumeroCiudadesPosibles" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="KataLonja.Tests.TestKataLonja.TestNumeroProductosPosibles" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                      <test-case name="KataLonja.Tests.TestKataLonja.TestPreciosPorCiudad" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                      <test-case name="KataLonja.Tests.TestKataLonja.TestPreciosPorProducto" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                      <test-case name="KataLonja.Tests.TestKataLonja.TestValorBrutoProductosEnCiudad" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                    </results>
+                  </test-suite>
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>
