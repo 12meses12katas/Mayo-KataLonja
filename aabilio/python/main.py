@@ -16,13 +16,13 @@ def main(argv):
     if len(argv) > 5 or len(argv) < 4:
         usage(argv)
     else:
-        myLonja = Lonja(int(argv[1]), int(argv[2]), int(argv[3]), int(argv[4]) if len(argv) == 5 else None)
+        myLonja = Lonja(float(argv[1]), float(argv[2]), float(argv[3]), float(argv[4]) if len(argv) == 5 else None)
         ciudad, beneficio = myLonja.calcularRentable()
         
         if beneficio < 0:
             print "Ninguna ciudad es rentable. La menos costosa (%d Euros) es %s" % (abs(beneficio), ciudad)
         else:
-            print "La ciudad con mayores beneficios (%d Euros) es %s" % (beneficio, ciudad)
+            print "La ciudad con mayores beneficios (%.2f Euros) es %s" % (beneficio, ciudad)
 
 if __name__ == "__main__":
     main(sys.argv)

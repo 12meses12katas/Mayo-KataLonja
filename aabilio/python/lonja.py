@@ -12,7 +12,7 @@ class ErrorKilos(Exception):
 
 class Lonja(object):
     '''
-        Clase Lonja. Recibe (deben de ser enteros):
+        Clase Lonja. Recibe (deben ser float):
             - kg_vieira   = kilogramos de vieira
             - kg_pulpo    = kilogramos de pulpo
             - kg_contollo = kilogramos de centollo 
@@ -21,24 +21,24 @@ class Lonja(object):
     '''
     
     __ciudades  = [ "Madrid", "Barcelona", "Lisboa" ]
-    __distancia = { "Madrid" : 800, "Barcelona" : 1600, "Lisboa" : 600 }
-    __precios   = { "Madrid" : [500, 0, 450], "Barcelona" : [450, 120, 0], "Lisboa" : [600, 100, 500] }
-    __plusFurgoneta = 5
-    __plusXdistancia = 2
+    __distancia = { "Madrid" : 800, "Barcelona" : 1100, "Lisboa" : 600 }
+    __precios   = { "Madrid" : [500.00, 0.0, 450.0], "Barcelona" : [450.0, 120.0, 0.0], "Lisboa" : [600.0, 100.0, 500.0] }
+    __plusFurgoneta = 5.0
+    __plusXdistancia = 2.0
         
     def __init__(self, kg_vieira=None, kg_pulpo=None, kg_centollo=None, kg_totales=None):
         '''Inicia los valores de en kg de vieiras, pulpos y centollos'''
         if (kg_vieira is not None and kg_pulpo is not None and kg_centollo is not None):
-            if (type(kg_vieira) is int and type(kg_pulpo) is int and type(kg_centollo) is int):
+            if (type(kg_vieira) is float and type(kg_pulpo) is float and type(kg_centollo) is float):
                 self.__kg_vieira   = kg_vieira   if kg_vieira   <= 200 else None
                 self.__kg_pulpo    = kg_pulpo    if kg_pulpo    <= 200 else None
                 self.__kg_centollo = kg_centollo if kg_centollo <= 200 else None
                 if kg_totales is not None:
-                    if type(kg_totales) is not int:
-                        raise ErrorKilos("El valor para kg_totales no es un entero")
+                    if type(kg_totales) is not float:
+                        raise ErrorKilos("El valor para kg_totales no es float")
                 self.__kg_totales  = kg_totales  if kg_totales is not None else 200
             else:
-                raise ErrorKilos("No todos los valores para los kilos son enteros")
+                raise ErrorKilos("No todos los valores para los kilos son float")
         else:
             raise ErrorKilos("No se establecieron valores para os kilos")
         
@@ -51,21 +51,24 @@ class Lonja(object):
         # Iniciar gastos, ganancias y beneficios a 0
         self.__gastosTotales = {}; self.__gananciasFinales = {}; self.__beneficiosBrutos = {}
         for i in self.__ciudades:
-            self.__gastosTotales[i] = 0
-            self.__gananciasFinales[i] = 0
-            self.__beneficiosBrutos[i] = 0
+            self.__gastosTotales[i] = 0.0
+            self.__gananciasFinales[i] = 0.0
+            self.__beneficiosBrutos[i] = 0.0
         
     def __devaluarPrecios(self):
         '''Devalúa los precios de los productos en relación con los kilómetros de distancia de las ciudades destino'''
         for i in self.__ciudades:
-            porcntj = self.__distancia[i] / 100
+            porcntj = self.__distancia[i] / 100.0
             for b in range(len(self.__precios[i])):
                 if self.__precios[i][b] > 0:
-                    self.__precios[i][b] -= ((self.__precios[i][b] * porcntj)/100)
+                    self.__precios[i][b] -= ((self.__precios[i][b] * porcntj)/100.0)
                 self.__precios[i][b] = 0 if self.__precios[i][b] < 0 else self.__precios[i][b]
         
-    def calcularRentable(self):
-        '''Calcula cuál es la ciudad que generará mayor beneficio y la cantidad y los devuelve (return ciudad, beneficio)'''
+    def calcularRentable(self, show=False):
+        '''
+            Calcula cuál es la ciudad que generará mayor beneficio y la cantidad y los devuelve (return ciudad, beneficio)
+            Llamar con show=True si se quiere que se pase info adicional
+        '''
         self.__devaluarPrecios() # Devalúa el precio según los kms recorridos
         for i in self.__ciudades:
             self.__gastosTotales[i] = self.__plusFurgoneta + (self.__plusXdistancia * self.__distancia[i])
@@ -73,6 +76,13 @@ class Lonja(object):
                 self.__gananciasFinales[i] += self.__precios[i][b] * self.__kilosProducto[b]
             # Se le resta los gastos a las ganancias:
             self.__beneficiosBrutos[i] = self.__gananciasFinales[i] - self.__gastosTotales[i]
+            
+        if show == True:
+            print "Precios devaluados según Kms  :", self.__precios
+            print "Ganancias por ciudades        :", self.__gananciasFinales
+            print "Gastos totales por ciudades   :", self.__gastosTotales
+            print "Beneficios Brutos por ciudades:", self.__beneficiosBrutos
+                
         
         mayor_nombre = self.__ciudades[0]
         mayor_valor  = self.__beneficiosBrutos[mayor_nombre]
