@@ -30,9 +30,9 @@ class Lonja(object):
         '''Inicia los valores de en kg de vieiras, pulpos y centollos'''
         if (kg_vieira is not None and kg_pulpo is not None and kg_centollo is not None):
             if (type(kg_vieira) is int and type(kg_pulpo) is int and type(kg_centollo) is int):
-                self.__kg_vieira   = kg_vieira   if kg_vieira   < 200 else None
-                self.__kg_pulpo    = kg_pulpo    if kg_pulpo    < 200 else None
-                self.__kg_centollo = kg_centollo if kg_centollo < 200 else None
+                self.__kg_vieira   = kg_vieira   if kg_vieira   <= 200 else None
+                self.__kg_pulpo    = kg_pulpo    if kg_pulpo    <= 200 else None
+                self.__kg_centollo = kg_centollo if kg_centollo <= 200 else None
                 if kg_totales is not None:
                     if type(kg_totales) is not int:
                         raise ErrorKilos("El valor para kg_totales no es un entero")
@@ -42,9 +42,7 @@ class Lonja(object):
         else:
             raise ErrorKilos("No se establecieron valores para os kilos")
         
-        if (self.__kg_vieira is None or
-                self.__kg_pulpo is None or
-                self.__kg_centollo is None):
+        if (self.__kg_vieira is None or self.__kg_pulpo is None or self.__kg_centollo is None):
             raise ErrorKilos("Cantidad de kilos inesperada")
         elif (self.__kg_vieira + self.__kg_pulpo + self.__kg_centollo > self.__kg_totales):
             raise ErrorKilos("Cantidad máxima de kilos (%d) superada" % self.__kg_totales)
