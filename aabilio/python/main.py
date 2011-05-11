@@ -18,6 +18,8 @@ def main(argv):
     else:
         myLonja = Lonja(float(argv[1]), float(argv[2]), float(argv[3]), float(argv[4]) if len(argv) == 5 else None)
         ciudad, beneficio = myLonja.calcularRentable()
+        # Para más resultados:
+        # ciudad, beneficio = myLonja.calcularRentable()
         
         if beneficio < 0:
             print "Ninguna ciudad es rentable. La menos costosa (%d Euros) es %s" % (abs(beneficio), ciudad)
