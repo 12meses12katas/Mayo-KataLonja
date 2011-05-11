@@ -25,6 +25,7 @@ class Lonja(object):
     __precios   = { "Madrid" : [500.00, 0.0, 450.0], "Barcelona" : [450.0, 120.0, 0.0], "Lisboa" : [600.0, 100.0, 500.0] }
     __plusFurgoneta = 5.0
     __plusXdistancia = 2.0
+    __max_kg = 200.0
         
     def __init__(self, kg_vieira=None, kg_pulpo=None, kg_centollo=None, kg_totales=None):
         '''Inicia los valores de en kg de vieiras, pulpos y centollos'''
@@ -33,7 +34,7 @@ class Lonja(object):
                 if kg_totales is not None:
                     if type(kg_totales) is not float:
                         raise ErrorKilos("El valor para kg_totales no es float")
-                self.__kg_totales  = kg_totales  if kg_totales is not None else 200
+                self.__kg_totales  = kg_totales  if kg_totales is not None else self.__max_kg
                 
                 self.__kg_vieira   = kg_vieira   if kg_vieira   <= self.__kg_totales else None
                 self.__kg_pulpo    = kg_pulpo    if kg_pulpo    <= self.__kg_totales else None
@@ -79,10 +80,11 @@ class Lonja(object):
             self.__beneficiosBrutos[i] = self.__gananciasFinales[i] - self.__gastosTotales[i]
             
         if show == True:
-            print "Precios devaluados según Kms  :", self.__precios
-            print "Ganancias por ciudades        :", self.__gananciasFinales
-            print "Gastos totales por ciudades   :", self.__gastosTotales
-            print "Beneficios Brutos por ciudades:", self.__beneficiosBrutos
+            print "Kilos (vieira, pulpo, centollo):", self.__kilosProducto
+            print "Precios devaluados según Kms   :", self.__precios
+            print "Ganancias por ciudades         :", self.__gananciasFinales
+            print "Gastos totales por ciudades    :", self.__gastosTotales
+            print "Beneficios Brutos por ciudades :", self.__beneficiosBrutos
                 
         
         mayor_nombre = self.__ciudades[0]
