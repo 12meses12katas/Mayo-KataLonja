@@ -56,32 +56,6 @@ describe "Fisherman" do
     @carlos.best_market.should == @barcelone
   end
 
-  specify "KataLonja" do
-    seller(@carlos).has(50).kilo_of("vieiras").to_sell
-    seller(@carlos).has(100).kilo_of("pulpo").to_sell
-    seller(@carlos).has(50).kilo_of("centollos").to_sell
-
-    in_market(@madrid).sell_price_of("vieiras").is(500).euros_each_kilo
-    in_market(@madrid).sell_price_of("pulpo").is(0).euros_each_kilo
-    in_market(@madrid).sell_price_of("centollos").is(450).euros_each_kilo
-
-    in_market(@barcelone).sell_price_of("vieiras").is(450).euros_each_kilo
-    in_market(@barcelone).sell_price_of("pulpo").is(120).euros_each_kilo
-    in_market(@barcelone).sell_price_of("centollos").is(0).euros_each_kilo
-
-    in_market(@lisboa).sell_price_of("vieiras").is(600).euros_each_kilo
-    in_market(@lisboa).sell_price_of("pulpo").is(100).euros_each_kilo
-    in_market(@lisboa).sell_price_of("centollos").is(500).euros_each_kilo
-
-    seller(@carlos).is(800).far_from(@madrid)
-    seller(@carlos).is(1100).far_from(@barcelone)
-    seller(@carlos).is(600).far_from(@lisboa)
-
-    @carlos.net_incomes_in(@madrid).should == 42095
-    @carlos.net_incomes_in(@barcelone).should == 28500
-    @carlos.net_incomes_in(@lisboa).should == 59895
-    @carlos.best_market.should == @lisboa
-  end
 
   def in_market(market)
     builder = MarketBuilder.new
