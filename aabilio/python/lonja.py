@@ -68,7 +68,8 @@ class Lonja(object):
         
     def calcularRentable(self, show=False):
         '''
-            Calcula cuál es la ciudad que generará mayor beneficio y la cantidad y los devuelve (return ciudad, beneficio)
+            Calcula cuál es la ciudad que generará mayor beneficio (y la cantidad de estos) 
+            y los devuelve (return ciudad, beneficio).
             Llamar con show=True si se quiere que se pase info adicional
         '''
         self.__devaluarPrecios() # Devalúa el precio según los kms recorridos
