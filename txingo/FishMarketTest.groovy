@@ -1,7 +1,6 @@
 import static org.junit.Assert.*;
 import groovy.util.GroovyTestCase;
 
-import org.junit.After;
 import org.junit.Before;
 import org.junit.Test 
 
@@ -15,19 +14,15 @@ class FishMarketTest extends GroovyTestCase {
         market = new FishMarket()
     }
     
-    @After
-    public void tearDown() throws Exception {
-    }
-    
     @Test
     public void testLisbon(){
-        def city = market.bestSelling(50, 100, 50)
-        assertEquals "Lisbon", city.name
+        def city = market.bestSelling(["scallop":50, "octopus":100, "spidercrab":50])
+        assertEquals "Lisboa", city
     }
     
     @Test
     public void testBarcelona(){
-        def city = market.bestSelling(0, 200, 0)
-        assertEquals "Barcelona", city.name
+        def city = market.bestSelling(["scallop":0, "octopus":200, "spidercrab":0])
+        assertEquals "Barcelona", city
     }
 }
