@@ -1,11 +1,18 @@
-require File.dirname(__FILE__) + '/../../lib/fisherman.rb'
-require File.dirname(__FILE__) + '/../../lib/market.rb'
+require File.dirname(__FILE__) + '/../../lib/fisherman'
+require File.dirname(__FILE__) + '/../../lib/market'
+require File.dirname(__FILE__) + '/../../lib/stock'
 
-Given /^([^\"]*) has the following stock$/ do |name, stock|
-  @fisherman = Fisherman.new(name)
-  stock.rows_hash.each { |product, quantity|
-    @fisherman.set_quantity_for_product(product, quantity.to_i)
+require File.dirname(__FILE__) + '/../../spec/support/builders'
+include Builders
+
+
+Given /^Carlos has the following stock$/ do |table|
+  stock = Stock.new
+  table.rows_hash.each { |product, quantity|
+    stock.has(quantity.to_i, product)
   }
+  @fisherman       = Fisherman.new("Carlos")
+  @fisherman.stock = stock
 end
 
 def market_by(name)
@@ -19,22 +26,21 @@ Given /^the following markets conditions$/ do |table|
   table.hashes.each { |quotations|
     product = quotations.delete("PRODUCT")
     quotations.each { |name, price|
-      market_by(name).set_price_for_product(product, price.to_i)
+      market_by(name).has(quotation.of(product).at(price.to_i).build)
     }
   }
 end
 
 When /^a market has the following conditions$/ do |table|
-  @a_market = Market.new("a market")
+  @market = Market.new("a market")
   table.rows_hash.each { |product, price|
-      @a_market.set_price_for_product(product, price.to_i)
+    @market.has(quotation.of(product).at(price.to_i).build)
   }
 end
 
 Then /^brut income for this market is (\d+)$/ do |expected_income|
-  @fisherman.stock_value_in(@a_market).should == expected_income.to_i
+  @fisherman.stock_value_in(@market).should == expected_income.to_i
 end
-
 
 Then /^brut incomes from the markets are$/ do |table|
   table.rows_hash.each { |name, expected_income|
@@ -47,7 +53,6 @@ When /^Carlos is in Galicia, far from the markets$/ do |table|
     @fisherman.set_distance_from_market(market_by(name), distance.to_i)
   }
 end
-
 
 Then /^the best choice for Carlos is ([^"]*)$/ do |name|
   @fisherman.best_market.should == market_by(name)
