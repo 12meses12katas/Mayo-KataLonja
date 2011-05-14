@@ -1,24 +1,27 @@
 class Market
 
   attr_reader :name
-  attr_reader :prices
 
   def initialize(name)
-    @name = name
-    @prices = {}
+    @name       = name
+    @quotations = []
   end
 
   def to_s
     @name
   end
 
-  def set_price_for_product(product, price)
-    @prices[product] = price
+  def has(quotation)
+    @quotations << quotation
+  end
+
+  def price_of(product)
+    @quotations.select { |quotation| quotation.product == product }.first.price
   end
 
   def value_of(stock)
     income = 0
-    stock.each { |product, quantity| income += quantity * @prices[product] }
+    stock.products.each { |product| income += stock.quantity_of(product) * price_of(product) }
     income
   end
 
