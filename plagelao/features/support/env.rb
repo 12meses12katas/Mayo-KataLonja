@@ -1,0 +1,7 @@
+require './lib/emprendedor'
+require './lib/furgoneta'
+require './lib/pescaderia'
+require './lib/marisco'
+require './lib/oferta'
+require './lib/factura'
+require './lib/carga'
