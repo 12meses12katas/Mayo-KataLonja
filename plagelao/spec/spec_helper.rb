@@ -1,0 +1,7 @@
+require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/emprendedor'
+require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/furgoneta'
+require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/pescaderia'
+require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/marisco'
+require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/oferta'
+require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/factura'
+require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/carga'
