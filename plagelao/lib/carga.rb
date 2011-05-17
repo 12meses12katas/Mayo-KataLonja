@@ -7,7 +7,7 @@ class Carga
     @perdida = 0
   end
 
-  def sufre_una_perdida_de_calidad_del(tanto_por_ciento_de_perdida)
+  def sufre_un(tanto_por_ciento_de_perdida)
     @perdida = tanto_por_ciento_de_perdida
   end
 

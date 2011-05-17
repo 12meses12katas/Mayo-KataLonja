@@ -6,7 +6,7 @@ describe Furgoneta do
                                      :paga_una => nil) }
   let(:cliente) { stub(:cliente, :kilometros_desde_lonja => 200,
                                  :paga_al_proveedor_por => nil) }
-  let(:un_monton_de_marisco) { stub(:un_monton_de_marisco, :sufre_una_perdida_de_calidad_del => nil) }
+  let(:un_monton_de_marisco) { stub(:un_monton_de_marisco, :sufre_un => nil) }
   let(:furgoneta) { Furgoneta.new(:precio_por_kilometro => 2) }
 
   it 'puede ser alquilada por un proveedor' do
@@ -42,10 +42,10 @@ describe Furgoneta do
       let(:furgoneta) { Furgoneta.new(:precio_por_kilometro => 2,
                                       :perdida_de_calidad => perdida_de_calidad) }
       let(:perdida_de_calidad) { 1 }
-      let(:dos_por_ciento) { 2 }
+      let(:porcentaje_de_perdida_de_calidad_del_dos_por_ciento) { 2 }
 
       it "provoca una perdida de calidad en la carga" do
-        un_monton_de_marisco.should_receive(:sufre_una_perdida_de_calidad_del).with(dos_por_ciento)
+        un_monton_de_marisco.should_receive(:sufre_un).with(porcentaje_de_perdida_de_calidad_del_dos_por_ciento)
         furgoneta.lleva_a(cliente, un_monton_de_marisco)
       end
     end
