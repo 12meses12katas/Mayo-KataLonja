@@ -2,11 +2,13 @@
 require 'spec_helper'
 
 describe Emprendedor do
+  let(:furgoneta) { stub(:furgoneta, :alquilada_por => nil,
+                                     :lleva_a => nil) }
   let(:cartera_de_clientes) { [pescaderia_paca] }
   let(:pescaderia_paca) { stub(:pescapaca, :ciudad => 'Zamora',
                                            :kilometros_desde_lonja => 200,
                                            :acepta_tarjeta_de_visita_de => nil) }
-  let(:emprendedor) { Emprendedor.new cartera_de_clientes}
+  let(:emprendedor) { Emprendedor.con cartera_de_clientes, furgoneta }
 
   it 'puede tener clientes en cualquier ciudad' do
     expect{emprendedor.tiene_como_cliente_a pescaderia_paca}.to_not raise_error
@@ -31,7 +33,6 @@ describe Emprendedor do
 
   context 'transporta el marisco' do
 
-    let(:furgoneta) { stub(:furgoneta, :lleva_a => nil) }
     let(:un_monton_de_marisco) { stub(:un_monton_de_marisco) }
 
     it 'en un furgoneta alquilada' do
@@ -44,7 +45,6 @@ describe Emprendedor do
 
   context 'cuando tiene clientes' do
 
-    let(:furgoneta) { stub(:furgoneta, :lleva_a => nil) }
     let(:vieiras) { stub(:vieiras) }
 
     before do

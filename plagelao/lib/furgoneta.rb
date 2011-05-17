@@ -9,7 +9,6 @@ class Furgoneta
 
   def alquilada_por proveedor
     @proveedor = proveedor
-    @proveedor.alquila_una(self)
   end
 
   def degrada_la_carga_con_un(porcentaje_cada_cien_kilometros)

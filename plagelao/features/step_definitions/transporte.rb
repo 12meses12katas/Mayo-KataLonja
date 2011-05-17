@@ -24,8 +24,7 @@ Given /^que la mercancia gallega pierde (\d+)% de calidad por cada 100Km recorri
 end
 
 When /^compro en la lonja (\d+) Kg de vieiras a (\d+) euros el kilo, (\d+) Kg de pulpo a (\d+) euros el kilo y otros (\d+) Kg de centollos a (\d+) euros el kilo$/ do |kilos_vieiras, precio_kilo_vieiras, kilos_pulpo, precio_kilo_pulpo, kilos_centollos, precio_kilo_centollos|
-  @emprendedor = Emprendedor.new @cartera_de_clientes
-  @furgoneta.alquilada_por(@emprendedor)
+  @emprendedor = Emprendedor.con @cartera_de_clientes, @furgoneta
   carga = Carga.new(:vieiras => kilos_vieiras.to_i,
                     :pulpo => kilos_pulpo.to_i,
                     :centollos => kilos_centollos.to_i)
