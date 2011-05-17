@@ -1,8 +1,1 @@
-require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/emprendedor'
-require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/furgoneta'
-require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/pescaderia'
-require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/marisco'
-require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/oferta'
-require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/factura'
-require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/carga'
-require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/cartera_de_clientes'
+Dir[File.join(File.dirname(__FILE__), "..", "lib", "*.rb")].each {|file| require file }
