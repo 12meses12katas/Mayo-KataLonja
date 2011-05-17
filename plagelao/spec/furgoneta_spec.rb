@@ -10,8 +10,7 @@ describe Furgoneta do
   let(:furgoneta) { Furgoneta.new(:precio_por_kilometro => 2) }
 
   it 'puede ser alquilada por un proveedor' do
-    proveedor.should_receive(:alquila_una).with(furgoneta)
-    furgoneta.alquilada_por proveedor
+    expect{ furgoneta.alquilada_por proveedor }.to_not raise_error
   end
 
   context 'una vez alquilada' do
