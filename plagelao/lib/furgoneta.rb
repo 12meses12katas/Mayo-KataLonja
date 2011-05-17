@@ -16,7 +16,7 @@ class Furgoneta
     @porcentaje_de_perdida_de_calidad_cada_cien_kilometros = porcentaje_cada_cien_kilometros
   end
 
-  def viaja_a(cliente, carga)
+  def lleva_a(cliente, carga)
     @proveedor.paga factura_por_viaje_a(cliente)
     carga.sufre_una_perdida_de_calidad_del(cliente.kilometros_desde_lonja/100 * @porcentaje_de_perdida_de_calidad_cada_cien_kilometros)
     cliente.paga_al_proveedor_por(carga)

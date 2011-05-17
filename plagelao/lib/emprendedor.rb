@@ -15,7 +15,7 @@ class Emprendedor
 
   def compra un_monton_de_marisco
     @ganancias.keys.map do |cliente|
-      @furgoneta.viaja_a(cliente, un_monton_de_marisco)
+      @furgoneta.lleva_a(cliente, un_monton_de_marisco)
     end
   end
 

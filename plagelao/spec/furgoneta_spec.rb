@@ -26,17 +26,17 @@ describe Furgoneta do
 
     it 'crea una factura para el proveedor' do
       Factura.should_receive(:new)
-      furgoneta.viaja_a(cliente, un_monton_de_marisco)
+      furgoneta.lleva_a(cliente, un_monton_de_marisco)
     end
 
     it 'cobra al proveedor por cada viaje' do
       proveedor.should_receive(:paga).with(factura_por_viaje)
-      furgoneta.viaja_a(cliente, un_monton_de_marisco)
+      furgoneta.lleva_a(cliente, un_monton_de_marisco)
     end
 
     it 'le dice al cliente que pague al proveedor' do
       cliente.should_receive(:paga_al_proveedor_por).with(un_monton_de_marisco)
-      furgoneta.viaja_a(cliente, un_monton_de_marisco)
+      furgoneta.lleva_a(cliente, un_monton_de_marisco)
     end
 
     context "debido a un defecto" do
@@ -50,7 +50,7 @@ describe Furgoneta do
 
       it "provoca una perdida de calidad en la carga" do
         un_monton_de_marisco.should_receive(:sufre_una_perdida_de_calidad_del).with(dos_por_ciento)
-        furgoneta.viaja_a(cliente, un_monton_de_marisco)
+        furgoneta.lleva_a(cliente, un_monton_de_marisco)
       end
     end
   end

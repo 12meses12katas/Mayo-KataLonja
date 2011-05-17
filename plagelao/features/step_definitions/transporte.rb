@@ -20,7 +20,7 @@ Given /^un posible cliente en "([^"]*)"\((\d+)km\) que compra vieiras a (\d+) eu
 end
 
 Given /^que la mercancia gallega pierde (\d+)% de calidad por cada 100Km recorridos debido a un defecto en la furgoneta$/ do |perdida_de_calidad_cada_cien_kilometros|
-  @furgoneta.degrada_la_carga_con_una(perdida_de_calidad_cada_cien_kilometros.to_i)
+  @furgoneta.degrada_la_carga_con_un(perdida_de_calidad_cada_cien_kilometros.to_i)
 end
 
 When /^compro en la lonja (\d+) Kg de vieiras a (\d+) euros el kilo, (\d+) Kg de pulpo a (\d+) euros el kilo y otros (\d+) Kg de centollos a (\d+) euros el kilo$/ do |kilos_vieiras, precio_kilo_vieiras, kilos_pulpo, precio_kilo_pulpo, kilos_centollos, precio_kilo_centollos|

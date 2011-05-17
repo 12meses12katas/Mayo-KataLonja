@@ -30,20 +30,20 @@ describe Emprendedor do
 
   context 'transporta el marisco' do
 
-    let(:furgoneta) { stub(:furgoneta, :viaja_a => nil) }
+    let(:furgoneta) { stub(:furgoneta, :lleva_a => nil) }
     let(:un_monton_de_marisco) { stub(:un_monton_de_marisco) }
 
     it 'en un furgoneta alquilada' do
         emprendedor.tiene_como_cliente_a pescaderia_paca
         emprendedor.alquila_una(furgoneta)
-        furgoneta.should_receive(:viaja_a).with(pescaderia_paca, un_monton_de_marisco)
+        furgoneta.should_receive(:lleva_a).with(pescaderia_paca, un_monton_de_marisco)
         emprendedor.compra un_monton_de_marisco
       end
   end
 
   context 'cuando tiene clientes' do
 
-    let(:furgoneta) { stub(:furgoneta, :viaja_a => nil) }
+    let(:furgoneta) { stub(:furgoneta, :lleva_a => nil) }
     let(:vieiras) { stub(:vieiras) }
 
     before do
