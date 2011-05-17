@@ -26,14 +26,14 @@ describe Emprendedor do
 
   it 'cuando cobra se apunta quien le ha pagado' do
     emprendedor.tiene_como_cliente_a pescaderia_paca
-    expect{ emprendedor.cobra(pescaderia_paca, 100) }.to_not raise_error
+    expect{ emprendedor.cobra_a(pescaderia_paca, 100) }.to_not raise_error
   end
 
   it 'cuando paga se apunta por que' do
     factura = stub(:factura, :cliente => pescaderia_paca,
                              :pago => 10 )
     emprendedor.tiene_como_cliente_a pescaderia_paca
-    expect{ emprendedor.paga(factura) }.to_not raise_error
+    expect{ emprendedor.paga_una(factura) }.to_not raise_error
   end
 
   context 'transporta el marisco' do
@@ -72,8 +72,8 @@ describe Emprendedor do
       end
 
       it 'decide vender al que más le paga' do
-        emprendedor.cobra(mercamadrid, 100)
-        emprendedor.cobra(pescaderia_paca, 10)
+        emprendedor.cobra_a(mercamadrid, 100)
+        emprendedor.cobra_a(pescaderia_paca, 10)
         emprendedor.maximo_beneficio_en?.should == 'Madrid'
       end
     end

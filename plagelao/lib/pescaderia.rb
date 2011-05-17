@@ -20,6 +20,6 @@ class Pescaderia
   end
 
   def paga(coste_del_marisco)
-    @proveedor.cobra(self, coste_del_marisco)
+    @proveedor.cobra_a(self, coste_del_marisco)
   end
 end

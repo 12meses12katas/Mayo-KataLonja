@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Furgoneta do
 
   let(:proveedor) { stub(:proveedor, :alquila_una => nil,
-                                     :paga => nil) }
+                                     :paga_una => nil) }
   let(:cliente) { stub(:cliente, :kilometros_desde_lonja => 200,
                                  :paga_al_proveedor_por => nil) }
   let(:un_monton_de_marisco) { stub(:un_monton_de_marisco, :sufre_una_perdida_de_calidad_del => nil) }
@@ -28,7 +28,7 @@ describe Furgoneta do
     end
 
     it 'cobra al proveedor por cada viaje' do
-      proveedor.should_receive(:paga).with(factura_por_viaje)
+      proveedor.should_receive(:paga_una).with(factura_por_viaje)
       furgoneta.lleva_a(cliente, un_monton_de_marisco)
     end
 
