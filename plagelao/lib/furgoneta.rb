@@ -1,18 +1,17 @@
 class Furgoneta
 
+  DEFAULT_OPTIONS = {:precio_por_kilometro => 0,
+                     :perdida_de_calidad => 0}
   attr_reader :precio_por_kilometro
 
-  def initialize(options = {:precio_por_kilometro => 0})
-    @precio_por_kilometro = options[:precio_por_kilometro]
-    @porcentaje_de_perdida_de_calidad_cada_cien_kilometros = 0
+  def initialize(options)
+    current_options = DEFAULT_OPTIONS.merge(options)
+    @precio_por_kilometro = current_options[:precio_por_kilometro]
+    @porcentaje_de_perdida_de_calidad_cada_cien_kilometros = current_options[:perdida_de_calidad]
   end
 
   def alquilada_por proveedor
     @proveedor = proveedor
-  end
-
-  def degrada_la_carga_con_un(porcentaje_cada_cien_kilometros)
-    @porcentaje_de_perdida_de_calidad_cada_cien_kilometros = porcentaje_cada_cien_kilometros
   end
 
   def lleva_a(cliente, carga)
