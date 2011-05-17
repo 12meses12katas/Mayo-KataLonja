@@ -5,3 +5,4 @@ require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/mari
 require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/oferta'
 require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/factura'
 require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/carga'
+require '/Users/plagelao/development/ruby/katas/Mayo-KataLonja/plagelao/lib/cartera_de_clientes'
