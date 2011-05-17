@@ -1,7 +1,10 @@
 class Emprendedor
 
-  def initialize
+  def initialize cartera_de_clientes
     @ganancias = {}
+    cartera_de_clientes.each do |cliente|
+      tiene_como_cliente_a cliente
+    end
   end
 
   def alquila_una(furgoneta)
