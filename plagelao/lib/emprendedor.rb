@@ -21,7 +21,7 @@ class Emprendedor
   end
 
   def compra un_monton_de_marisco
-    @ganancias.keys.map do |cliente|
+    @ganancias.keys.each do |cliente|
       @furgoneta.lleva_a(cliente, un_monton_de_marisco)
     end
   end
@@ -30,11 +30,11 @@ class Emprendedor
     mejor_cliente.ciudad
   end
 
-  def cobra(cliente, nuevo_cobro)
-    @ganancias[cliente] += nuevo_cobro
+  def cobra_a(cliente, una_pasta)
+    @ganancias[cliente] += una_pasta
   end
 
-  def paga(factura)
+  def paga_una(factura)
     @ganancias[factura.cliente] -= factura.pago
   end
 

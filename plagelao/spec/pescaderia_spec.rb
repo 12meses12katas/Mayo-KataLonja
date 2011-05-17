@@ -24,7 +24,7 @@ describe Pescaderia do
 
   context 'cuando compra marisco' do
     let(:un_monton_de_marisco) { stub(:un_monton_de_marisco) }
-    let(:proveedor) { stub(:proveedor, :cobra => nil) }
+    let(:proveedor) { stub(:proveedor, :cobra_a => nil) }
 
     before do
       oferta.stub(:por => 100)
@@ -37,7 +37,7 @@ describe Pescaderia do
     end
 
     it 'le paga al proveedor por el marisco' do
-      proveedor.should_receive(:cobra).with(pescaderia, 100)
+      proveedor.should_receive(:cobra_a).with(pescaderia, 100)
       pescaderia.paga(100)
     end
   end
