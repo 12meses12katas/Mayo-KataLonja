@@ -6,14 +6,17 @@ Given /^una pequeña furgoneta que es capaz de transportar hasta (\d+) Kg de pes
                             :precio_por_kilometro => coste_por_kilometro_recorrido.to_i)
 end
 
-Given /^un posible cliente en "([^"]*)"\((\d+)km\) que compra vieiras a (\d+) euros el kilo, pulpo a (\d+) euros el kilo y centollos a (\d+)$/ do |ciudad, distancia, precio_kilo_vieiras, precio_kilo_pulpo, precio_kilo_centollos|
-  @cartera_de_clientes ||= []
-  pescaderia = Pescaderia.new(:ciudad => ciudad,
-                              :kilometros_desde_lonja => distancia.to_i,
-                              :oferta => Oferta.new(:vieiras => precio_kilo_vieiras.to_i,
-                                                    :pulpo => precio_kilo_pulpo.to_i,
-                                                    :centollos => precio_kilo_centollos.to_i))
-  @cartera_de_clientes << pescaderia
+Given /^la siguiente cartera de clientes:$/ do |cartera_de_clientes|
+  @cartera_de_clientes = []
+  cartera_de_clientes.rows.each do |descripcion_cliente|
+    pescaderia = Pescaderia.new(:ciudad => descripcion_cliente[0],
+                                :kilometros_desde_lonja => descripcion_cliente[1].to_i,
+                                :oferta => Oferta.new(:vieiras => descripcion_cliente[2].to_i,
+                                                      :pulpo => descripcion_cliente[3].to_i,
+                                                      :centollos => descripcion_cliente[4].to_i))
+    @cartera_de_clientes << pescaderia
+  end
+#  @nueva_cartera_de_clientes = CarteraDeClientes.new @cartera_de_clientes
 end
 
 Given /^que la mercancia gallega pierde (\d+)% de calidad por cada 100Km recorridos debido a un defecto en la furgoneta$/ do |perdida_de_calidad_cada_cien_kilometros|
