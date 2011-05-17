@@ -6,9 +6,7 @@ class Emprendedor
 
   def initialize cartera_de_clientes, furgoneta
     @ganancias = {}
-    cartera_de_clientes.each do |cliente|
-      tiene_como_cliente_a cliente
-    end
+    cartera_de_clientes.pertenece_a self
     alquila_una furgoneta
   end
 

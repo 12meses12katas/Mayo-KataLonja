@@ -4,11 +4,16 @@ require 'spec_helper'
 describe Emprendedor do
   let(:furgoneta) { stub(:furgoneta, :alquilada_por => nil,
                                      :lleva_a => nil) }
-  let(:cartera_de_clientes) { [pescaderia_paca] }
+  let(:cartera_de_clientes) { stub(:pescaderia_paca, :pertenece_a => nil) }
   let(:pescaderia_paca) { stub(:pescapaca, :ciudad => 'Zamora',
                                            :kilometros_desde_lonja => 200,
                                            :acepta_tarjeta_de_visita_de => nil) }
   let(:emprendedor) { Emprendedor.con cartera_de_clientes, furgoneta }
+
+  it 'tiene una cartera de cientes' do
+    cartera_de_clientes.should_receive(:pertenece_a)
+    Emprendedor.con cartera_de_clientes, furgoneta
+  end
 
   it 'puede tener clientes en cualquier ciudad' do
     expect{emprendedor.tiene_como_cliente_a pescaderia_paca}.to_not raise_error
