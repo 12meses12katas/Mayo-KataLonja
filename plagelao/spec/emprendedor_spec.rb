@@ -2,10 +2,11 @@
 require 'spec_helper'
 
 describe Emprendedor do
+  let(:cartera_de_clientes) { [pescaderia_paca] }
   let(:pescaderia_paca) { stub(:pescapaca, :ciudad => 'Zamora',
                                            :kilometros_desde_lonja => 200,
                                            :acepta_tarjeta_de_visita_de => nil) }
-  let(:emprendedor) { Emprendedor.new }
+  let(:emprendedor) { Emprendedor.new cartera_de_clientes}
 
   it 'puede tener clientes en cualquier ciudad' do
     expect{emprendedor.tiene_como_cliente_a pescaderia_paca}.to_not raise_error
