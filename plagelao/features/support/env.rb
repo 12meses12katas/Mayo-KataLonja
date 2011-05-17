@@ -1,8 +1,1 @@
-require './lib/emprendedor'
-require './lib/furgoneta'
-require './lib/pescaderia'
-require './lib/marisco'
-require './lib/oferta'
-require './lib/factura'
-require './lib/carga'
-require './lib/cartera_de_clientes'
+Dir[File.join(File.dirname(__FILE__), "..", "..", "lib", "*.rb")].each {|file| require file }
