@@ -12,6 +12,10 @@ class Carga
   end
 
   def kilos_de(marisco)
-    (kilos_de_marisco[marisco] * (100 - @perdida) ) / 100
+    kilos_de_marisco[marisco] - kilos_que_la_perdida_de_calidad_ha_echado_a_perder_de(marisco)
+  end
+
+  def kilos_que_la_perdida_de_calidad_ha_echado_a_perder_de(marisco)
+    kilos_de_marisco[marisco] *  @perdida / 100
   end
 end
