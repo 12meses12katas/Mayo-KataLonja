@@ -18,7 +18,6 @@ describe Furgoneta do
     let(:factura_por_viaje) { stub(:factura_por_viaje) }
 
     before do
-      furgoneta.degrada_la_carga_con_un(0)
       furgoneta.alquilada_por proveedor
       Factura.stub(:new => factura_por_viaje)
     end
@@ -40,12 +39,10 @@ describe Furgoneta do
 
     context "debido a un defecto" do
 
+      let(:furgoneta) { Furgoneta.new(:precio_por_kilometro => 2,
+                                      :perdida_de_calidad => perdida_de_calidad) }
       let(:perdida_de_calidad) { 1 }
       let(:dos_por_ciento) { 2 }
-
-      before do
-        furgoneta.degrada_la_carga_con_un(perdida_de_calidad)
-      end
 
       it "provoca una perdida de calidad en la carga" do
         un_monton_de_marisco.should_receive(:sufre_una_perdida_de_calidad_del).with(dos_por_ciento)
