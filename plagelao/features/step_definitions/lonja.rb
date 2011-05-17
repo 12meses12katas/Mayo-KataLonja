@@ -1,5 +1,25 @@
 #encoding: utf-8
 
+class MasBeneficioEn
+  def initialize(destino_esperado)
+    @destino_esperado = destino_esperado
+  end
+  def matches?(emprendedor)
+    @emprendedor = emprendedor
+    @emprendedor.maximo_beneficio_en?.eql?(@destino_esperado)
+  end
+  def failure_message
+    "esperabamos obtener un  mayor beneficio en #{@destino_esperado} pero lo hemos obtenido en #{@emprendedor.maximo_beneficio_en?}"
+  end
+  def negative_failure_message
+    "no esperabamos obtener un  mayor beneficio en #{@destino_esperado} pero es donde lo hemos obtenido"
+  end
+end
+
+def vender_en(expected)
+  MasBeneficioEn.new expected
+end
+
 Given /^una pequeña furgoneta que es capaz de transportar hasta (\d+) Kg de pescado que cuesta cargar (\d+) euros y que cobra (\d+) euros por kilometro recorrido$/ do |capacidad_maxima, coste_carga, coste_por_kilometro_recorrido|
   @especificaciones_de_la_furgoneta = {:capacidad_maxima => capacidad_maxima.to_i,
                                        :coste_carga => coste_carga.to_i,
@@ -33,6 +53,5 @@ When /^compro en la lonja (\d+) Kg de vieiras a (\d+) euros el kilo, (\d+) Kg de
 end
 
 Then /^para obtener el mayor beneficio debería vender esa carga de pescado y marisco a "([^"]*)"$/ do |destino|
-  @emprendedor.maximo_beneficio_en?.should == destino
-  #@emprendedor.should vender_en destino
+  @emprendedor.should vender_en destino
 end
