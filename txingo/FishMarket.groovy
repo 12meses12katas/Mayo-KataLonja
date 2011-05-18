@@ -16,15 +16,14 @@ class FishMarket {
     
     public bestSelling(def loads){
         def profits = [:]
-        cities.each { calculateProfitsForCity(profits, loads, it) }
-        def maxValue = profits.values().max()
-        def maxProfit = profits.find { it.value == maxValue }
-        
-        maxProfit.key
+        cities.each { city -> calculateProfitsInCity(profits, loads, city) }
+        def maxProfit = profits.keySet().max()
+        profits[maxProfit]
     }
     
-    private calculateProfitsForCity(def profits, def loads, def city){
-        profits[city] = calculateIncome(loads, city) - calculateCost(city)
+    private calculateProfitsInCity(def profits, def loads, def city){
+        def profit = calculateIncome(loads, city) - calculateCost(city)
+        profits[profit] = city
     }
     
     private calculateIncome(def loads, def city){
@@ -32,11 +31,11 @@ class FishMarket {
         def octopus = octopusPrices[city] * loads["octopus"]
         def spidercrab = spidercrabPrices[city] * loads["spidercrab"]
         def income = scallop + octopus + spidercrab
-        income *= EVERY_100_KM_1_PERCENT_LESS * distance[city]
+        income * EVERY_100_KM_1_PERCENT_LESS * distance[city]
     }
     
     private calculateCost(def city){
         def kmCost = distance[city] * TRAVEL_COST_KM_RATE
-        def cost = LOAD_COST + kmCost
+        LOAD_COST + kmCost
     }
 }
