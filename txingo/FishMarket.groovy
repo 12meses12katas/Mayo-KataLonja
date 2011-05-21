@@ -1,22 +1,40 @@
 
 class FishMarket {
-    private static LOAD_COST = 5
-    private static TRAVEL_COST_KM_RATE = 2
+    def static LOAD_COST = 5
+    def static TRAVEL_COST_KM_RATE = 2
     def static EVERY_100_KM_1_PERCENT_LESS = 1 / 100 / 100 // 1% / 100 km
     
-    def scallopPrices = ["Madrid":500, "Barcelona":450, "Lisboa":600]
-    def octopusPrices = ["Madrid":0, "Barcelona":120, "Lisboa":100]
-    def spidercrabPrices = ["Madrid":450, "Barcelona":0, "Lisboa":500]
-    def distance = ["Madrid":800, "Barcelona":1100, "Lisboa":600]
     def cities = [
         "Madrid",
         "Barcelona",
         "Lisboa"
     ]
+    def completeMap = [:]
+    
+    public FishMarket(){
+        initCompleteMap()
+    }
+    
+    private initCompleteMap(){
+        completeMap["Madrid"] = [
+            ["prices": ["scallop":500, "octopus":0 , "spidercrab":450]],
+            ["distance": 800]
+        ]
+        completeMap["Barcelona"] = [
+            ["prices": ["scallop":450, "octopus":120 , "spidercrab":0]],
+            ["distance": 1100]
+        ]
+        completeMap["Lisboa"] = [
+            ["prices": ["scallop":600, "octopus":100 , "spidercrab":500]],
+            ["distance": 600]
+        ]
+    }
     
     public bestSelling(def loads){
         def profits = [:]
-        cities.each { city -> calculateProfitsInCity(profits, loads, city) }
+        cities.each { city ->
+            calculateProfitsInCity(profits, loads, city)
+        }
         def maxProfit = profits.keySet().max()
         profits[maxProfit]
     }
@@ -27,15 +45,19 @@ class FishMarket {
     }
     
     private calculateIncome(def loads, def city){
-        def scallop = scallopPrices[city] * loads["scallop"]
-        def octopus = octopusPrices[city] * loads["octopus"]
-        def spidercrab = spidercrabPrices[city] * loads["spidercrab"]
+        def cityMap = completeMap[city]
+        def scallop = cityMap.prices.scallop.get(0) * loads.scallop
+        def octopus = cityMap.prices.octopus.get(0) * loads.octopus
+        def spidercrab = cityMap.prices.spidercrab.get(0) * loads.spidercrab
         def income = scallop + octopus + spidercrab
-        income * EVERY_100_KM_1_PERCENT_LESS * distance[city]
+        def distance = cityMap.distance.get(1)
+        income * EVERY_100_KM_1_PERCENT_LESS * distance
     }
     
     private calculateCost(def city){
-        def kmCost = distance[city] * TRAVEL_COST_KM_RATE
+        def cityMap = completeMap[city]
+        def distance = cityMap.distance.get(1)
+        def kmCost = distance * TRAVEL_COST_KM_RATE
         LOAD_COST + kmCost
     }
 }
