@@ -12,7 +12,7 @@ Feature: find the best market to sell a stock
       | Name   |
       | Madrid |
       | Lisboa |
-    Given the following stock
+    And the following stock
       | Product | Quantity |
       | Vieiras | 2        |
       | Pulpo   | 3        |
@@ -24,7 +24,18 @@ Feature: find the best market to sell a stock
       | Name   | Value |
       | Madrid | 53    |
       | Lisboa | 500   |
-    Then the best market is Lisboa
+    And the best market is Lisboa
+
+
+  Scenario Outline: stock depreciation is 1% each 100km
+    Given a stock could have this <value> if it were produced locally
+    When this stock comes from <distance>
+    Then the value of the stock is <adjusted value>
+  Examples:
+    | value | distance | adjusted value |
+    | 100   | 100      | 99             |
+    | 100   | 200      | 98             |
+    | 500   | 240      | 488            |
 
 
   Scenario Outline: truck charges are 5 fixed + 2 each km
@@ -38,12 +49,12 @@ Feature: find the best market to sell a stock
     | 240      | 485    |
 
 
-  Scenario: choose the best balance between incomes and charges
+  Scenario: choose the best market considering all charges
     Given the following markets
       | Name   |
       | Madrid |
       | Lisboa |
-    Given the following stock
+    And the following stock
       | Product | Quantity |
       | Vieiras | 2        |
       | Pulpo   | 3        |
@@ -51,15 +62,15 @@ Feature: find the best market to sell a stock
       | Product | Madrid | Lisboa |
       | Vieiras | 10     | 100    |
       | Pulpo   | 11     | 100    |
-    When the markets are at the following distances
+    And the markets are at the following distances
       | Name   | Distance |
       | Madrid | 0        |
       | Lisboa | 240      |
     Then stock's net incomes in the markets are
       | Name   | Value |
       | Madrid | 53    |
-      | Lisboa | 15    |
-    Then the best market is Madrid
+      | Lisboa | 3     |
+    And the best market is Madrid
 
 
 

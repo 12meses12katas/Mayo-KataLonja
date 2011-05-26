@@ -27,9 +27,9 @@ end
 When /^the market conditions are$/ do |table|
   table.hashes.each { |row|
     product = row['Product']
-    markets = row.keys
-    markets.delete('Product')
-    markets.each { |market|
+    headers = row.keys
+    headers.delete('Product')
+    headers.each { |market|
       @lonja.market(market).has_quotation(product, row[market].to_i)
     }
   }
@@ -58,4 +58,15 @@ Then /^stock's net incomes in the markets are$/ do |table|
   table.hashes.each { |row|
     @lonja.income(@lonja.market(row['Name']), @stock).should == row['Value'].to_i
   }
+end
+
+
+Given /^a stock could have this (\d+) if it were produced locally$/ do |value|
+  @value = value.to_i
+end
+When /^this stock comes from (\d+)$/ do |distance|
+  @distance = distance.to_i
+end
+Then /^the value of the stock is (\d+)$/ do |adjusted|
+  Market::adjust_value(@value, @distance).should == adjusted.to_i
 end

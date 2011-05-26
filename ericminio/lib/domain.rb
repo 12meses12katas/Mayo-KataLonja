@@ -15,7 +15,7 @@ module Domain
     end
 
     def income(market, stock)
-      market.value_of(stock) - Renter::price_of(distance_of(market))
+      Market::adjust_value(market.value_of(stock), distance_to(market)) - Renter::price_of(distance_to(market))
     end
 
     def best_market(stock)
@@ -28,7 +28,7 @@ module Domain
       @distances[market] = distance
     end
 
-    def distance_of(market)
+    def distance_to(market)
       @distances[market].to_i
     end
   end
@@ -53,6 +53,10 @@ module Domain
 
     def quotation_of(product)
       @quotations[product]
+    end
+
+    def self.adjust_value(value, distance)
+      value - value * distance / 100 / 100
     end
   end
 
