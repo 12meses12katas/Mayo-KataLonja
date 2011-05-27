@@ -1,0 +1,63 @@
+Guión:
+
+1 - 
+web de la kata:: https://github.com/12meses12katas/Mayo-KataLonja
+web de katayunos::: http://katayunos.com/
+
+2 - 
+tdd, bottom up, ping pong
+
+
+3 - 
+objetivo: 
+responder al emprendedor donde debe vender esa carga de pescado y marisco para obtener el mayor beneficio
+
+4 - 
+candidates:  
+pescado, marisco, emprendedor, puerto, ciudades, furgoneta, carga, ciudad, dinero, mercado.
+
+5 - 
+CRC: Candidate - Responsabilities - Collaborators
+
+emprendedor: 
+       -- responsability: elegir la ciudad de mayor beneficio
+       -- collaborator --> mercado
+             
+mercado: 
+       -- calcular el beneficio de vender una carga en él
+
+6 -
+Interfaces de colaboración:
+
+mercado (name, distancia, precios)
+nombre ciudad
+calcularBeneficio
+
+FakeMarket
+CityMarket
+
+
+7 - Entorno:
+  - boostrap.php
+
+8 - pruebas sobre Mercado
+  - con un solo producto con precio cero, ingresos cero
+  - con un solo producto y con precio, pero distancia cero, beneficios = ingresos
+  - con un solo producto y con precio y distancia, beneficios = ingresos - gastos
+  - con variso productos y varios precios y distancias, beneficios = ingresos - gastos
+
+9 - pruebas sobre emprendedor
+  - si hay un solo mercado, ese es el mejor.
+  - si hay varios mercados, el de mayor beneficio es el mejor
+ 
+ 
+10 - notas finales
+   - alternativa top down con stub sobre Asesor.
+   - alternativa topdown con mockery --> ggalmazor
+     https://github.com/12meses12katas/Mayo-KataLonja/tree/master/ggalmazor
+   - comentar el uso de array primitivo para definir stock en lugar de una clase.
+   - mostrar la kata sin tipos primitivos de @plagelao
+     https://github.com/12meses12katas/Mayo-KataLonja/tree/master/plagelao
+
+
+
