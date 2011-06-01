@@ -5,10 +5,10 @@ Objetivo final:
   encontrar la mejor lonja para vender unos productos
 
 Resumen de escenarios:
-  * Calcular ganancia teórica enviando una carga a una lonja
-  * Calcular pérdidas por transportar carga a una lonja
-  * Calcular índice de depreciación por transportar carga a una lonja
-  * Finalmente, el asesor debe calcular la lonja más rentable
+  * Calcular ganancia teórica enviando una carga a una lonja.
+  * Calcular pérdidas por transportar carga a una lonja.
+  * Calcular índice de depreciación por transportar carga a una lonja.
+  * Finalmente, el asesor debe calcular la lonja más rentable.
 
 Escenario:
   Calcular la ganancia teórica al enviar varios kg de cada producto a una lonja
