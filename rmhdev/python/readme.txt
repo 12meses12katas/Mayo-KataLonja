@@ -5,13 +5,13 @@ Objetivo final:
   encontrar la mejor lonja para vender unos productos
 
 Resumen de escenarios:
-  * Calcular ganancia teórica enviando una carga a una lonja
-  * Calcular pérdidas por transportar carga a una lonja
-  * Calcular índice de depreciación por transportar carga a una lonja
-  * Finalmente, el asesor debe calcular la lonja más rentable
+  * Calcular ganancia te√≥rica enviando una carga a una lonja
+  * Calcular p√©rdidas por transportar carga a una lonja
+  * Calcular √≠ndice de depreciaci√≥n por transportar carga a una lonja
+  * Finalmente, el asesor debe calcular la lonja m√°s rentable
 
 Escenario:
-  Calcular la ganancia teórica al enviar varios kg de cada producto a una lonja
+  Calcular la ganancia te√≥rica al enviar varios kg de cada producto a una lonja
 
   * test A:
   Dada la lonja de <ciudad>
@@ -29,7 +29,7 @@ Escenario:
   Entonces obtendremos una ganancia de <resultado>
 
 Escenario:
-  Calcular las pérdidas por transportar carga a una lonja
+  Calcular las p√©rdidas por transportar carga a una lonja
 
   * Test A:
   Dada la lonja <ciudad>
@@ -38,19 +38,19 @@ Escenario:
   Entonces tendremos unas perdidas de <resultado>
 
 Escenario:
-  Calcular en índice de depreciación por kilometraje a una Lonja
+  Calcular en √≠ndice de depreciaci√≥n por kilometraje a una Lonja
 
   * Test A:
   Dada la lonja <ciudad>
   Que se encuentra a <distancia> km
   cuando enviemos una furgoneta
-  Entonces el indice de depreciación será <resultado>
+  Entonces el indice de depreciaci√≥n ser√° <resultado>
 
 Escenario:
-  El asesor debe calcular la lonja más rentable
+  El asesor debe calcular la lonja m√°s rentable
 
   * Test A:
   Dado un <asesor>
   y una <carga de productos>
   cuando enviemos dicha carga a todas las <lonjas>
-  Entonces la lonja más rentable será <resultado>
+  Entonces la lonja m√°s rentable ser√° <resultado>
