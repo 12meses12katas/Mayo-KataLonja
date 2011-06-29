@@ -25,8 +25,9 @@ class Lonja:
         """Devuelve el coste de cargar la furgoneta y recorrer distancia."""
         # 5 euros por cada carga y 2 euros por cada km
         # tengo en cuenta la ida y la vuelta
-        cargas = carga / 200
-        return cargas * 5 + self._distancia * 2 * (2* cargas)
+        import math
+        cargas = math.ceil(carga / 200)
+        return cargas * 5 + self._distancia * 2 * (2 * cargas)
         
     def devaluacion_carga(self, beneficio, kgs):
         """Devuelve la devaluacion de una carga respecto al kilometraje."""
@@ -37,7 +38,6 @@ class Lonja:
 if __name__ == "__main__":
     ciudades = ['Madrid', 'Barcelona', 'Lisboa']
     productos = ['Vieiras', 'Pulpo', 'Centollos']
-    cantidades = [50, 100, 50]
     
     # Madrid
     precios_mad = [500.0, 0, 450.0]
@@ -53,6 +53,7 @@ if __name__ == "__main__":
     lonja_lisboa = Lonja(ciudades[2], productos, precios_lis, distancia_lis)
     
     # Calcular beneficios
+    cantidades = [50, 100, 50]
     ciudad_beneficios = {}
     stock = zip(productos, cantidades)
     ciudades_lonjas = zip(ciudades, [lonja_madrid, lonja_barcelona, lonja_lisboa])
