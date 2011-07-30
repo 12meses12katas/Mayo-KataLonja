@@ -1,0 +1,12 @@
+apply plugin: "groovy"
+
+repositories {
+  mavenCentral()
+  mavenRepo urls: "http://m2repo.spockframework.org/snapshots"
+}
+  
+dependencies {
+  groovy "org.codehaus.groovy:groovy-all:1.7.10"
+  testCompile "org.spockframework:spock-core:0.4-groovy-1.7"
+  testCompile "junit:junit:4.8.1"
+}
