@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+  <TopNode>[0-1032]C:\Users\charlie\Documents\Visual Studio 2008\Projects\KataLonja\KataLonja\bin\Debug\KataLonja.dll</TopNode>
+  <SelectedNode>[0-1024]KataLonja.OptimizerTests.OptimalLoadForOneCity("Lisbon",61100,59895)</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1032]C:\Users\charlie\Documents\Visual Studio 2008\Projects\KataLonja\KataLonja\bin\Debug\KataLonja.dll" Expanded="true" />
+    <Node UniqueName="[0-1033]KataLonja" Expanded="true" />
+    <Node UniqueName="[0-1000]KataLonja.CityTests" Expanded="true" />
+    <Node UniqueName="[0-1003]KataLonja.CityTests.ActualPriceIsCorrect" Expanded="true" />
+    <Node UniqueName="[0-1008]KataLonja.InventoryTests" Expanded="true" />
+    <Node UniqueName="[0-1022]KataLonja.OptimizerTests" Expanded="true" />
+    <Node UniqueName="[0-1023]KataLonja.OptimizerTests.OptimalLoadForOneCity" Expanded="true" />
+    <Node UniqueName="[0-1028]KataLonja.VanTests" Expanded="true" />
+  </Nodes>
+</VisualState>

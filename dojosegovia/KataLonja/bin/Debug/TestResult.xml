@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!--This file represents the results of running a test suite-->
+<test-results name="C:\Users\charlie\Documents\Visual Studio 2008\Projects\KataLonja\KataLonja\bin\Debug\KataLonja.dll" total="24" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2011-05-15" time="00:11:36">
+  <environment nunit-version="2.5.10.11092" clr-version="2.0.50727.4959" os-version="Microsoft Windows NT 6.1.7600.0" platform="Win32NT" cwd="C:\Windows\system32" machine-name="CHARLIE-LAPTOP" user="charlie" user-domain="charlie-laptop" />
+  <culture-info current-culture="en-US" current-uiculture="en-US" />
+  <test-suite type="Assembly" name="C:\Users\charlie\Documents\Visual Studio 2008\Projects\KataLonja\KataLonja\bin\Debug\KataLonja.dll" executed="True" result="Success" success="True" time="0.168" asserts="0">
+    <results>
+      <test-suite type="Namespace" name="KataLonja" executed="True" result="Success" success="True" time="0.161" asserts="0">
+        <results>
+          <test-suite type="TestFixture" name="CityTests" executed="True" result="Success" success="True" time="0.053" asserts="0">
+            <results>
+              <test-suite type="ParameterizedTest" name="ActualPriceIsCorrect" executed="True" result="Success" success="True" time="0.035" asserts="0">
+                <results>
+                  <test-case name="KataLonja.CityTests.ActualPriceIsCorrect(&quot;Pulpo&quot;,0)" executed="True" result="Success" success="True" time="0.025" asserts="3" />
+                  <test-case name="KataLonja.CityTests.ActualPriceIsCorrect(&quot;Centollos&quot;,414)" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                  <test-case name="KataLonja.CityTests.ActualPriceIsCorrect(&quot;Vieiras&quot;,460)" executed="True" result="Success" success="True" time="0.000" asserts="3" />
+                </results>
+              </test-suite>
+              <test-case name="KataLonja.CityTests.CityHasCorrectDistance" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="KataLonja.CityTests.CityHasCorrectName" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+              <test-case name="KataLonja.CityTests.TravelCostIsCorrect" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="InventoryTests" executed="True" result="Success" success="True" time="0.028" asserts="0">
+            <results>
+              <test-case name="KataLonja.InventoryTests.ItemsCanBeAdded" executed="True" result="Success" success="True" time="0.002" asserts="3" />
+              <test-suite type="ParameterizedTest" name="ProfitIsCalculatedCorrectly" executed="True" result="Success" success="True" time="0.011" asserts="0">
+                <results>
+                  <test-case name="KataLonja.InventoryTests.ProfitIsCalculatedCorrectly(50,100,50)" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                  <test-case name="KataLonja.InventoryTests.ProfitIsCalculatedCorrectly(0,0,0)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="KataLonja.InventoryTests.ProfitIsCalculatedCorrectly(50,0,0)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="KataLonja.InventoryTests.ProfitIsCalculatedCorrectly(0,100,0)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="KataLonja.InventoryTests.ProfitIsCalculatedCorrectly(0,0,50)" executed="True" result="Success" success="True" time="0.001" asserts="1" />
+                </results>
+              </test-suite>
+              <test-suite type="ParameterizedTest" name="RevenueIsCalculatedCorrectly" executed="True" result="Success" success="True" time="0.009" asserts="0">
+                <results>
+                  <test-case name="KataLonja.InventoryTests.RevenueIsCalculatedCorrectly(0,0,0)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="KataLonja.InventoryTests.RevenueIsCalculatedCorrectly(50,0,0)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="KataLonja.InventoryTests.RevenueIsCalculatedCorrectly(0,100,0)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="KataLonja.InventoryTests.RevenueIsCalculatedCorrectly(0,0,50)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                  <test-case name="KataLonja.InventoryTests.RevenueIsCalculatedCorrectly(50,100,50)" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="OptimizerTests" executed="True" result="Success" success="True" time="0.047" asserts="0">
+            <results>
+              <test-case name="KataLonja.OptimizerTests.OptimalLoadAcrossAllCities" executed="True" result="Success" success="True" time="0.027" asserts="3" />
+              <test-suite type="ParameterizedTest" name="OptimalLoadForOneCity" executed="True" result="Success" success="True" time="0.013" asserts="0">
+                <results>
+                  <test-case name="KataLonja.OptimizerTests.OptimalLoadForOneCity(&quot;Lisbon&quot;,61100,59895)" executed="True" result="Success" success="True" time="0.001" asserts="4" />
+                  <test-case name="KataLonja.OptimizerTests.OptimalLoadForOneCity(&quot;Barcelona&quot;,30705,28500)" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                  <test-case name="KataLonja.OptimizerTests.OptimalLoadForOneCity(&quot;Madrid&quot;,43700,42095)" executed="True" result="Success" success="True" time="0.000" asserts="4" />
+                </results>
+              </test-suite>
+            </results>
+          </test-suite>
+          <test-suite type="TestFixture" name="VanTests" executed="True" result="Success" success="True" time="0.016" asserts="0">
+            <results>
+              <test-case name="KataLonja.VanTests.HasSpecifiedCapacity" executed="True" result="Success" success="True" time="0.000" asserts="1" />
+              <test-case name="KataLonja.VanTests.InitialWeightIsZero" executed="True" result="Success" success="True" time="0.000" asserts="2" />
+              <test-case name="KataLonja.VanTests.LoadingVanOverCapacityThrowsException" executed="True" result="Success" success="True" time="0.011" asserts="1" />
+            </results>
+          </test-suite>
+        </results>
+      </test-suite>
+    </results>
+  </test-suite>
+</test-results>

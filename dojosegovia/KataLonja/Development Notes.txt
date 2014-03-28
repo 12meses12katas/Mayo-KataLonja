@@ -1,0 +1,63 @@
+﻿I started this solution at the 13 May 2011 Coding Dojo
+in Segovia. I was asked to speak first and I talked
+longer than I (or maybe others) expected, so we didn't
+finish the Kata there. I am creating this file so that
+the folks who saw the start can understand how I went
+about finishing it, and to add some thoughts about 
+other ways to solve the problem.
+
+STEPS
+
+1. In the Coding Dojo, all the code was developed in
+a single class called Destination (now City) and we
+got so far as to calculate the revenue, travel cost
+and profit for various loads of seafood.
+
+2. On the train back to Madrid, I changed the class
+name to City and did some refactoring so that names
+made more sense. I also encapsulated the generic
+dictionaries we used into derived classes Inventory
+and PriceList. I transferred the methods that 
+calculate revenue and profit to the Inventory class,
+giving them a City as an argument.
+
+3. Back in my hotel, I created a Van class, having 
+Capacity and Contents properties. Contents is an 
+Inventory. The van tracks it's CurrentWeight and 
+RemainingCapacity, although those properties were 
+added only after I started writing the optimizer.
+
+4. The Optimizer class has a general method to 
+optimize across a list of cities. It uses a 
+subordinate method to load a Van in an optimal
+way for a single city. The second method is public
+only for testing purposes. The constructor for the
+class takes an Inventory representing the stock
+on hand for shipping.
+
+5. In the Optimizer.cs file there is also a static
+class with an extension method that dumps the
+information held by the optimizer. This allows
+writing optimizer.DumpContents() without adding
+a method that is purely for testing to the class
+itself. Running the OptimalLoadForAllCities test
+therefore displays the answer we are looking for.
+
+NOTES
+
+1. We started this Kata bottom-up, because I wanted
+to be able to show some simple TDD coding at the 
+start. In fact, it might be smoother to do it 
+top-down, starting with the Optimizer. Maybe 
+somebody will try this and let us know.
+
+2. The specific example data does not actually
+exercise all parts of the code. For example, there
+is an (untested) check in the code to reduce the
+amount being loaded if it would otherwise increase
+the load beyond the capacity of the van.
+
+3. The possibility of a "girlfriend in Barcelona"
+is not accounted for in the code.
+
+Charlie
