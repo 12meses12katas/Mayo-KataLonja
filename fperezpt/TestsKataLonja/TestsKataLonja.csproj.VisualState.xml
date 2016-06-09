@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="true">
+  <TopNode>[0-1000]D:\12meses12katas\Mayo-KataLonja\fperezpt\TestsKataLonja\TestsKataLonja.csproj</TopNode>
+  <SelectedNode>[0-1000]D:\12meses12katas\Mayo-KataLonja\fperezpt\TestsKataLonja\TestsKataLonja.csproj</SelectedNode>
+  <ExcludeCategories>false</ExcludeCategories>
+  <Nodes>
+    <Node UniqueName="[0-1000]D:\12meses12katas\Mayo-KataLonja\fperezpt\TestsKataLonja\TestsKataLonja.csproj" Expanded="true" />
+    <Node UniqueName="[0-1010]D:\12meses12katas\Mayo-KataLonja\fperezpt\TestsKataLonja\bin\Debug\TestsKataLonja.dll" Expanded="true" />
+    <Node UniqueName="[0-1011]KataLonja" Expanded="true" />
+    <Node UniqueName="[0-1012]KataLonja.Tests" Expanded="true" />
+    <Node UniqueName="[0-1001]KataLonja.Tests.TestKataLonja" Expanded="true" />
+  </Nodes>
+</VisualState>
